@@ -11,6 +11,13 @@
     <link rel="stylesheet" type="text/css" href="css/nunito-font.css">
     <!-- Main Style Css -->
     <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <style>
+    /* Adicione este bloco de estilo para definir a cor do texto para preto */
+    .form-detail label,
+    .form-detail input {
+        color: black;
+    }
+</style>
 </head>
 <body class="form-v6">
     <div class="page-content">
@@ -18,34 +25,28 @@
             <div class="form-left">
                 <img src="{% static 'form-v6.jpg' %}" alt="form">
             </div>
-           <form class="form-detail" method="post" action="{% url 'register:register' %}">
+            <form class="form-detail" method="post" action="{% url 'register:register' %}">
     {% csrf_token %}
     <h2>Social Media</h2>
     <div class="form-row">
-        <label for="{{ form.nome.id_for_label }}">Nome Completo:</label>
+        {{ form.nome.label_tag }}
         {{ form.nome }}
         {{ form.nome.errors }}
     </div>
     <div class="form-row">
-        <label for="{{ form.email.id_for_label }}">E-mail:</label>
+        {{ form.email.label_tag }}
         {{ form.email }}
         {{ form.email.errors }}
     </div>
     <div class="form-row">
-        <label for="{{ form.senha.id_for_label }}">Senha:</label>
+        {{ form.senha.label_tag }}
         {{ form.senha }}
         {{ form.senha.errors }}
-    </div>
-    <div class="form-row">
-        <label for="{{ form.confirmar_senha.id_for_label }}">Repita sua Senha:</label>
-        {{ form.confirmar_senha }}
-        {{ form.confirmar_senha.errors }}
     </div>
     <div class="form-row-last">
         <input type="submit" name="register" class="register" value="Registrar-se">
     </div>
 </form>
-
                 </div>
             </form>
         </div>

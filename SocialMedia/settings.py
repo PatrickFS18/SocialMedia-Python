@@ -42,7 +42,7 @@ SECRET_KEY = config('SECRET_KEY', default=get_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'bookish-memory-jgxg466r4xxhq9wv-8000.app.github.dev','patrickfsdev.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'bookish-memory-jgxg466r4xxhq9wv-8000.app.github.dev','patrickfsdev.pythonanywhere.com','*']
 
 # Application definition
 

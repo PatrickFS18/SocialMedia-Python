@@ -18,26 +18,26 @@
             <div class="form-left">
                 <img src="{% static 'form-v6.jpg' %}" alt="form">
             </div>
-            <form class="form-detail" method="post" action="{% url 'register:register' %}">
+           <form class="form-detail" method="post" action="{% url 'register:register' %}">
     {% csrf_token %}
     <h2>Social Media</h2>
     <div class="form-row">
-        {{ form.nome.label_tag }}
+        <label for="{{ form.nome.id_for_label }}">Nome Completo:</label>
         {{ form.nome }}
         {{ form.nome.errors }}
     </div>
     <div class="form-row">
-        {{ form.email.label_tag }}
+        <label for="{{ form.email.id_for_label }}">E-mail:</label>
         {{ form.email }}
         {{ form.email.errors }}
     </div>
     <div class="form-row">
-        {{ form.senha.label_tag }}
+        <label for="{{ form.senha.id_for_label }}">Senha:</label>
         {{ form.senha }}
         {{ form.senha.errors }}
     </div>
     <div class="form-row">
-        {{ form.confirmar_senha.label_tag }}
+        <label for="{{ form.confirmar_senha.id_for_label }}">Repita sua Senha:</label>
         {{ form.confirmar_senha }}
         {{ form.confirmar_senha.errors }}
     </div>
@@ -45,6 +45,7 @@
         <input type="submit" name="register" class="register" value="Registrar-se">
     </div>
 </form>
+
                 </div>
             </form>
         </div>

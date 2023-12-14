@@ -18,27 +18,33 @@
             <div class="form-left">
                 <img src="{% static 'form-v6.jpg' %}" alt="form">
             </div>
-            <form class="form-detail" action="" method="post">
-                    {% csrf_token %}
-                <h2>Social Media</h2>
-                <div class="form-row">
-                    <input type="text" name="full-name" id="full-name" class="input-text" placeholder="Nome Completo"
-                        required>
-                </div>
-                <div class="form-row">
-                    <input type="text" name="your-email" id="your-email" class="input-text" placeholder="E-mail"
-                        required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
-                </div>
-                <div class="form-row">
-                    <input type="password" name="password" id="password" class="input-text" placeholder="Senha"
-                        required>
-                </div>
-                <div class="form-row">
-                    <input type="password" name="comfirm-password" id="comfirm-password" class="input-text"
-                        placeholder="Repita sua Senha" required>
-                </div>
-                <div class="form-row-last">
-                    <input type="submit" name="register" class="register" value="Registrar-se">
+            <form class="form-detail" method="post" action="{% url 'register:register' %}">
+    {% csrf_token %}
+    <h2>Social Media</h2>
+    <div class="form-row">
+        {{ form.nome.label_tag }}
+        {{ form.nome }}
+        {{ form.nome.errors }}
+    </div>
+    <div class="form-row">
+        {{ form.email.label_tag }}
+        {{ form.email }}
+        {{ form.email.errors }}
+    </div>
+    <div class="form-row">
+        {{ form.senha.label_tag }}
+        {{ form.senha }}
+        {{ form.senha.errors }}
+    </div>
+    <div class="form-row">
+        {{ form.confirmar_senha.label_tag }}
+        {{ form.confirmar_senha }}
+        {{ form.confirmar_senha.errors }}
+    </div>
+    <div class="form-row-last">
+        <input type="submit" name="register" class="register" value="Registrar-se">
+    </div>
+</form>
                 </div>
             </form>
         </div>

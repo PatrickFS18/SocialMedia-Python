@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import CustomLoginView
+from .views import CustomLoginView, login_view
 
 app_name = 'login'  
 

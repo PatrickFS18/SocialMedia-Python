@@ -7,8 +7,3 @@ class CustomLoginForm(forms.ModelForm):
     class Meta:
         model = Usuario
         fields = ['email', 'senha']
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        # Remova o campo 'nome' do formulário
-        self.fields.pop('nome', None)

@@ -90,19 +90,14 @@
       <h1 class="h3 mb-3 font-weight-normal">Login</h1>
 
       <!-- E-mail Field -->
-      <label for="inputEmail" class="sr-only">E-mail</label>
-      {{ form.email.label_tag }} {{ form.email }} {{ form.email.errors }}
+      <div style="display: inline">
+        <label for="inputEmail">E-mail</label>
+        {{ form.email }} {{ form.email.errors }}
 
-      <!-- Senha Field -->
-      <label for="inputPassword" class="sr-only">Password</label>
-      {{ form.password.label_tag }} {{ form.password }} {{ form.password.errors
-      }}
-
-      <!-- Checkbox "Remember Me" -->
-      <div class="checkbox mb-3">
-        <label> {{ form.remember_me }} Remember me </label>
+        <!-- Senha Field -->
+        <label for="inputPassword"> </br></br>Senha</label>
+        {{ form.senha }} {{ form.senha.errors }}
       </div>
-
       <!-- Botão de Envio -->
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         Sign in

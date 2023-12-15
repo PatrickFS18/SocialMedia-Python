@@ -1,22 +1,7 @@
-from django.contrib import messages
-from django.contrib.auth.views import LoginView
+from django.contrib.auth import login
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from .forms import CustomLoginForm
-
-class CustomLoginView(LoginView):
-    template_name = 'login.html'
-    authentication_form = CustomLoginForm
-
-    def form_valid(self, form):
-        # Você pode adicionar lógica aqui se necessário
-        return super().form_valid(form)
-
-    def form_invalid(self, form):
-        messages.error(self.request, 'Credenciais inválidas. Por favor, tente novamente.')
-        return super().form_invalid(form)
-
-def home_view(request):
-    return render(request, 'home.html')
 
 def login_view(request):
     if request.method == 'POST':

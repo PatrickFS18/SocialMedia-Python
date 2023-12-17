@@ -11,6 +11,7 @@ def login_view(request):
 
             # Authenticate the user
             user = authenticate(request, email=email, password=senha)
+            return redirect('home')  # Replace with your actual success page URL
 
             if user is not None:
                 # Log the user in

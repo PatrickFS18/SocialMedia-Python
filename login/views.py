@@ -25,4 +25,5 @@ def login_view(request):
     return render(request, 'login.html', {'form': form})
 
 def login_home(request):
+    form = CustomLoginForm(request.POST)
     return render(request, 'login.html', {'form': form})

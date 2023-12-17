@@ -10,8 +10,8 @@ def login_view(request):
             senha = form.cleaned_data['senha']
 
             # Authenticate the user
-            user = authenticate(request, email=email, password=senha)
             return redirect('home')  # Replace with your actual success page URL
+            user = authenticate(request, email=email, password=senha)
 
             if user is not None:
                 # Log the user in

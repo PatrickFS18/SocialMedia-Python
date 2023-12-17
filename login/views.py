@@ -10,7 +10,7 @@ def login_view(request):
 
             # Authenticate the user
             user = authenticate(request, email=email, password=senha)
-
+            
             if user is not None:
                 # Log the user in
                 login(request, user)

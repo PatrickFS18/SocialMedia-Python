@@ -11,7 +11,7 @@ def login_view(request):
 
             # Authenticate the user
             user = authenticate(request, email=email, password=senha)
-    
+
             if user is not None:
                 # Log the user in
                 login(request, user)
@@ -22,8 +22,4 @@ def login_view(request):
     else:
         form = CustomLoginForm()
 
-    return render(request, 'login.html', {'form': form})
-
-def login_home(request):
-    form = CustomLoginForm(request.POST)
     return render(request, 'login.html', {'form': form})

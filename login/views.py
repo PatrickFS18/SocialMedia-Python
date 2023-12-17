@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from .forms import CustomLoginForm  
-from register.models import Usuario
+from .forms import CustomLoginForm  # Replace with the actual path to your forms module
 
 def login_view(request):
     if request.method == 'POST':
@@ -16,8 +15,9 @@ def login_view(request):
             if user is not None:
                 # Log the user in
                 login(request, user)
-                return redirect('home') 
+                return redirect('home')  # Replace with your actual success page URL
             else:
+                # Authentication failed, handle accordingly
                 return render(request, 'login.html', {'form': form, 'error': 'Invalid credentials'})
     else:
         form = CustomLoginForm()

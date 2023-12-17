@@ -6,7 +6,7 @@ from login.forms import CustomLoginForm
 def register_view(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
-        formLogin = CustomLoginForm(request.POST)
+        formLogin = CustomLoginForm()
 
         if form.is_valid():
             # Salve o usuário no banco de dados

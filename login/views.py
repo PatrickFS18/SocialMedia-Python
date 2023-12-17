@@ -6,9 +6,10 @@ def login_view(request):
     if request.method == 'POST':
         form = CustomLoginForm(request.POST)
         if form.is_valid():
-            email = request.POST.get("email")
-            senha = request.POST.get('senha')
+            email = form.cleaned_data['email']
+            senha = form.cleaned_data['senha']
 
+            # Authenticate the user
             user = authenticate(request, email=email, password=senha)
 
             if user is not None:

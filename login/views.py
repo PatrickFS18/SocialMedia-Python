@@ -25,4 +25,4 @@ def login_view(request):
     return render(request, 'login.html', {'form': form})
 
 def login_home(request):
-    return render(request, 'login.html')
+    return render(request, 'login.html', {'form': form})

@@ -11,7 +11,7 @@ def register_view(request):
             # Adicione uma mensagem de sucesso
             messages.success(request, 'Registro bem-sucedido. Faça login para continuar.')
             # Redirecione para a página de login ou outra página desejada
-            return redirect('login:login')
+            return redirect('home')  
         else:
             # Adicione uma mensagem de erro
             messages.error(request, 'Corrija os erros no formulário.')

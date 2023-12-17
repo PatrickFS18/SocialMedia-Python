@@ -86,6 +86,13 @@
   <body class="text-center">
     <!-- No seu template -->
  
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
 
     <form method="post" action="{% url 'login:login' %}" class="form-signin">
       {% csrf_token %}

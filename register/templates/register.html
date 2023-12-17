@@ -29,11 +29,6 @@
     {% csrf_token %}
     <h2>Social Media</h2>
     <div class="form-row">
-        {{ form.nome.label_tag }}
-        {{ form.nome }}
-        {{ form.nome.errors }}
-    </div>
-    <div class="form-row">
         {{ form.email.label_tag }}
         {{ form.email }}
         {{ form.email.errors }}
